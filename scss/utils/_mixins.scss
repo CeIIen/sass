@@ -1,0 +1,22 @@
+/* Helper */
+
+@mixin displayFlexColumn($flexDirection:column,$gap:2rem, $justify:center) {
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: center;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin respondTo($breakPoint) {
+    @if($breakPoint==xs){
+        @media (max-width:767px){
+            @content;
+        }
+    }
+    @if($breakPoint==sm){
+        @media (max-width:1024px){
+            @content;
+        }
+    }
+}
